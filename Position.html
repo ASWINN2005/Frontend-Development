@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Position Examples</title>
+    <style>
+        body {
+            height: 2000px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 50px;
+        }
+        
+        .example {
+            margin-bottom: 50px;
+            padding: 20px;
+            height: 200px;
+            position: relative;
+        }
+
+        .static-box {
+            position: static;
+            background-color: #ffc107;
+            width: 150px;
+            height: 150px;
+        }
+
+        .relative-box {
+            position: relative;
+            background-color: #03a9f4;
+            width: 150px;
+            height: 150px;
+            top: 20px;
+            left: 30px;
+        }
+
+        .absolute-container {
+            position: relative;
+        }
+
+        .absolute-box {
+            position: absolute;
+            background-color: #e91e63;
+            width: 150px;
+            height: 150px;
+            top: 20px;
+            left: 30px;
+        }
+
+        .fixed-box {
+            position: fixed;
+            background-color: #ff0000;
+            width: 120px;
+            height: 120px;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .sticky-box {
+            position: sticky;
+            top: 10px;
+            background-color: #9c27b0;
+            width: 100%;
+            padding: 10px;
+            color: white;
+            z-index: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fixed-box">Fixed</div>
+
+    <h2>Static (default)</h2>
+    <div class="example">
+        <div class="static-box">Static</div>
+    </div>
+
+    <h2>Relative</h2>
+    <div class="example">
+        <div class="relative-box">Relative</div>
+    </div>
+
+    <h2>Absolute (inside relative parent)</h2>
+    <div class="example absolute-container">
+        <div class="absolute-box">Absolute</div>
+    </div>
+
+    <h2>Sticky (sticks to top when scrolling)</h2>
+    <div class="sticky-box">Sticky Position</div>
+    <p>Scroll down to see how sticky and fixed behave when the page scrolls. Fixed stays at top-right always, sticky gets "stuck" only after you scroll to it.</p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Monoton&family=Orbitron:wght@500&display=swap');
+
+
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;   
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+
+
+body {
+  background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTN5czFxZWg0cnEybWY4dnNkMXoyZjJtYmk5bG54Nzk3ZjlqMGthaCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o7buaucmSsxQf1pZK/giphy.gif');
+  background-size: cover;         
+  background-repeat: no-repeat;
+  background-position: center;
+                    
+}
+
+
+.box {
+    height: 200px;
+    width: 400px;
+    background-color: red;
+    border: 20px solid black;
+}
+
+.inner-box {
+    height: 200px;
+    width: 40px;
+    background-color: white;
+    border: 20px solid white;
+}
+
+
+.box2 {
+    height: 200px;
+    width: 400px;
+    background-color: blue;
+    border: 20px solid black;
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K Aswin | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    :root {
+      --bg-dark: #0d0d0d;
+      --bg-light: #1a1a1a;
+      --text-main: #e0e0e0;
+      --primary: #ffffff;
+      --secondary: #999999;
+      --accent: #00bcd4;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      scroll-behavior: smooth;
+    }
+
+    h1, h3 {
+      text-align: center;
+      background: linear-gradient(to right, #fff, #ccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 8px rgba(255, 255, 255, 0.05);
+    }
+
+    .navbar-brand, .nav-link {
+      color: var(--primary) !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      color: var(--accent) !important;
+      transform: scale(1.05);
+    }
+
+    .container-main {
+      max-width: 960px;
+      margin: auto;
+      padding: 70px 20px 30px;
+      animation: fadeInMain 1.2s ease-in-out;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .image-container img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid #444;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.07);
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+
+    section {
+      background-color: var(--bg-light);
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.03);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    section:hover {
+      background-color: #222;
+      transform: scale(1.01);
+    }
+
+    ul, ol {
+      padding-left: 25px;
+    }
+
+    a {
+      color: var(--secondary);
+      transition: 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .btn-pop {
+      display: block;
+      margin: 40px auto;
+      padding: 12px 28px;
+      font-size: 18px;
+      border-radius: 50px;
+      border: 2px solid #888;
+      background: linear-gradient(to right, #333, #222);
+      color: white;
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    .btn-pop:hover {
+      background-color: var(--primary);
+      color: black;
+      border-color: white;
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    footer {
+      background: #0a0a0a;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+      color: #777;
+      border-top: 1px solid #333;
+    }
+
+    @keyframes fadeInMain {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 576px) {
+      .container-main {
+        padding: 40px 10px;
+      }
+
+      .image-container img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">K ASWIN</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#Aboutme">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container container-main">
+    <h1>K ASWIN</h1>
+    <p class="text-center fs-5">Hello! Welcome to my Portfolio</p>
+
+    <div class="image-container">
+      <img src="https://via.placeholder.com/200" alt="Aswin Photo">
+    </div>
+
+    <section id="Aboutme">
+      <h3>About Me</h3>
+      <p class="lead">I am K Aswin from Kuppam, currently pursuing B.Tech in Electronics and Communication Engineering at Kuppam Engineering College. I completed Intermediate at Kuppam Junior College and schooling at Kuppam Public School.</p>
+    </section>
+
+    <section id="Skills">
+      <h3>Skills</h3>
+      <ol class="lead">
+        <li>MS Office Tools</li>
+        <li>C Language</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>Digital Logic Design</li>
+      </ol>
+    </section>
+
+    <section id="Projects">
+      <h3>Projects</h3>
+      <ul class="lead">
+        <li>PCB Design for Counter Circuit</li>
+        <li>Mini Project: Basic Quiz Game using Java</li>
+      </ul>
+    </section>
+
+    <section id="Certifications">
+      <h3>Certifications</h3>
+      <ul class="lead">
+        <li>Computer Architecture - NPTEL</li>
+        <li>Python - Spoken Tutorial (IIT Bombay)</li>
+        <li>Digital 101 - Nasscom</li>
+      </ul>
+    </section>
+
+    <section id="Contact">
+      <h3>Contact Me</h3>
+      <ul class="lead">
+        <li>Phone: 8500052662</li>
+        <li>Alternate: 9347170568</li>
+        <li>Email: <a href="mailto:bharathishivaram1973@gmail.com">Click to Email</a></li>
+      </ul>
+    </section>
+
+    <button type="button" class="btn btn-pop" data-bs-toggle="popover" title="Thanks!" data-bs-content="Thanks for visiting my portfolio!">
+      Click Me
+    </button>
+  </div>
+
+  <footer>
+    &copy; 2025 K Aswin | Portfolio. Designed with ❤️
+  </footer>
+
+  <script>
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+    [...popoverTriggerList].forEach(el => new bootstrap.Popover(el));
+  </script>
+
+</body>
+</html>

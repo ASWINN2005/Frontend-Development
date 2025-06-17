@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Monochrome</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <style>
+    body {
+      background-color: #000;
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    h1 {
+      padding-top: 30px;
+      font-weight: 700;
+      animation: slideDown 1s ease-out;
+    }
+
+    .nav {
+      justify-content: center;
+      background-color: rgba(20, 20, 20, 0.85);
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .nav-link {
+      color: white !important;
+      padding: 10px 20px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #ccc !important;
+      text-decoration: underline;
+      transform: scale(1.05);
+    }
+
+    .nav-link.disabled {
+      color: gray !important;
+      cursor: not-allowed;
+    }
+
+    .btn-custom {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      margin: 20px auto;
+      transition: 0.4s ease;
+    }
+
+    .btn-custom:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Modal Styling */
+    .modal-content {
+      background-color: #111;
+      color: white;
+      border: 2px solid #333;
+      border-radius: 20px;
+      animation: modalSlide 0.5s ease;
+    }
+
+    @keyframes modalSlide {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <center><h1>Bootstrap</h1></center>
+
+  <div class="container">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="sample.html" target="_blank">Portfolio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Support</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+
+    <center>
+      <!-- Popover Button -->
+      <button type="button" class="btn btn-custom" data-bs-toggle="popover" title="Welcome!" data-bs-content="Thanks for visiting!">
+        Toggle Popover
+      </button>
+
+      <!-- Modal Trigger -->
+      <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#myModal">
+        Open Modal
+      </button>
+    </center>
+  </div>
+
+  <!-- Modal Structure -->
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Hello Visitor!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <p>This is a sleek, animated modal built with Bootstrap 5 and custom styling. It's fully responsive and only uses black, white, and grey!</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+    [...popoverTriggerList].map(el => new bootstrap.Popover(el));
+  </script>
+
+</body>
+</html>

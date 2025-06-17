@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Transitions Example</title>
+    <style>
+          @keyframes pulse {
+            0% {
+                transform: scale(1);
+                background-color: rgb(255, 171, 244);
+            }
+            25% {
+                transform: scale(1.2);
+                background-color: rgb(255, 119, 223);
+            }
+            50% {
+                transform: scale(1.2);
+                background-color: rgb(255, 57, 209);
+            }
+            75% {
+                transform: scale(1.2);
+                background-color: rgb(255, 60, 210);
+            }
+            100% {
+                transform: scale(1);
+                background-color: rgb(255, 175, 231);
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #4CAF50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 1s ease, transform 0.5s ease;
+        }
+
+        .box:hover {
+            background-color: #2196F3;
+            transform: scale(1.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            transition: background-color 0.5s, transform 0.3s;
+        }
+
+        h1:hover {
+            color: rgb(111, 135, 255);
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Transitions Example</h1>
+    <div class="box">Hover over me!</div>
+
+    <h2>Key frames</h2>
+
+    <div class="box" style="width: 100px; height: 100px; background-color: red; animation: pulse 2s infinite;">
+        Keyframes Animation
+    </div>
+
+</body>
+
+</html>

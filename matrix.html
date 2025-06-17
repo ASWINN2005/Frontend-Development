@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to the Matrix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: 'Share Tech Mono', monospace;
+      background: black;
+      color: #00ff00;
+      overflow-x: hidden;
+    }
+
+    /* Matrix Code Background */
+    canvas#matrix {
+      position: fixed;
+      top: 0; left: 0;
+      z-index: -2;
+    }
+
+    /* Overlay video background */
+    video.bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      opacity: 0.05;
+      z-index: -1;
+    }
+
+    .header {
+      text-align: center;
+      padding: 80px 20px 20px;
+    }
+    .header h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+      animation: flicker 2s infinite;
+    }
+
+    .desc {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 0 30px;
+    }
+    .card {
+      background: rgba(0,255,0,0.05);
+      border: 1px solid #00ff00;
+      padding: 20px;
+      width: 260px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ff00aa;
+      transition: 0.3s;
+    }
+    .card:hover {
+      background: rgba(0,255,0,0.1);
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #00ff00;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      filter: grayscale(100%) contrast(120%) brightness(80%);
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+    .card-sub {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0.4;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Matrix rain background -->
+  <canvas id="matrix"></canvas>
+  <!-- Subtle matrix video background -->
+  <video class="bg-video" autoplay muted loop>
+    <source src="https://static.videezy.com/system/resources/previews/000/005/484/original/Matrix-code.mp4" type="video/mp4">
+  </video>
+
+  <div class="header">
+    <h1>M A T R I X</h1>
+  </div>
+  <div class="desc">
+    Embark on a journey through layers of virtual reality.<br>Uncover hidden truths, hack the system, and explore the depths of digital illusion.
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://i.imgur.com/xaVZtlj.jpg" alt="Neo">
+      <div class="card-title">Enter the Matrix</div>
+      <div class="card-sub">Embrace the truth</div>
+    </div>
+    <div class="card">
+      <img src="https://i.imgur.com/KpEDq0K.png" alt="Code">
+      <div class="card-title">Hack the System</div>
+      <div class="card-sub">Bypass the illusion</div>
+    </div>
+    <div class="card">
+      <img src="https://i.imgur.com/Ch7iUOH.jpg" alt="Rabbit">
+      <div class="card-title">Follow the Rabbit</div>
+      <div class="card-sub">Begin your awakening</div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const characters = "アァイウエオカキクケコ0123456789<>|&$#@!?¥%ΔΣΩ+×±{}[]÷abcdefghijklmnopqrstuvwxyz";
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#0f0";
+      ctx.font = `${fontSize}px 'Share Tech Mono'`;
+
+      drops.forEach((y, i) => {
+        const text = characters[Math.floor(Math.random() * characters.length)];
+        ctx.fillText(text, i * fontSize, y * fontSize);
+
+        if (y * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      });
+    }
+    setInterval(draw, 33);
+  </script>
+</body>
+</html>

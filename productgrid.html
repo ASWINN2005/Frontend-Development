@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Grid Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 15px;
+      flex-grow: 1;
+    }
+
+    .product-info h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .product-info p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #007BFF;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 18px;
+      }
+
+      .product-info h3 {
+        font-size: 18px;
+      }
+
+      .product-info p {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Our Top Products</h1>
+</header>
+
+<div class="product-grid">
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1616596187885-244668dbf03d" alt="Headphones" width="300">
+    <div class="product-info">
+      <h3>Wireless Headphones</h3>
+      <p>Crystal clear sound with deep bass. Bluetooth 5.0 support.</p>
+      <div class="price">₹1,999</div>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/300x200" alt="Product 2">
+    <div class="product-info">
+      <h3>Smart Watch</h3>
+      <p>Track your fitness, heart rate and sleep quality in style.</p>
+      <div class="price">₹2,499</div>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://unsplash.com/s/photos/headphones" alt="Product 3">
+    <div class="product-info">
+      <h3>Gaming Mouse</h3>
+      <p>Ergonomic design with customizable RGB lights and DPI settings.</p>
+      <div class="price">₹799</div>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/300x200" alt="Product 4">
+    <div class="product-info">
+      <h3>Bluetooth Speaker</h3>
+      <p>Portable and waterproof speaker with 10-hour battery life.</p>
+      <div class="price">₹1,299</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

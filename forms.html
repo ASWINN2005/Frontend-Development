@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sample Registration Form</title>
+    <link rel="stylesheet" href="forms.css">
+</head>
+<body>
+
+<h2>Contact Form</h2>
+
+<form action="/sample.html" method="post">
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="fname" required> <br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="1" max="120" required> <br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required> <br>
+
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" name="email" required> <br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" minlength="6" required> <br>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="3" required></textarea> <br>
+
+    <label for="pincode">Pincode:</label>
+    <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required> <br>
+
+    <label>Choose your Department:</label><br>
+    <input type="radio" id="ECE" name="department" value="ECE" required>
+    <label for="ECE">ECE</label><br>
+
+    <input type="radio" id="CSE" name="department" value="CSE">
+    <label for="CSE">CSE</label><br>
+
+    <input type="radio" id="MECH" name="department" value="MECH">
+    <label for="MECH">MECH</label><br><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required><br><br>
+
+    <label for="file">Upload Resume:</label>
+    <input type="file" id="file" name="file" accept=".pdf,.doc"><br><br>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" name="color"><br><br>
+
+    <label for="range">Rate Us:</label>
+    <input type="range" id="range" name="range" min="1" max="10"><br><br>
+
+    <label for="audio">Listen to this Audio:</label><br>
+    <audio controls>
+
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio><br><br>
+
+    <label for="video">Watch this Video:</label><br>
+    <video width="320" height="240" controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support video.
+    </video><br><br>
+
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
